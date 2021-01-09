@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="dimes_0dp">0dp</dimen>
+    <dimen name="dimes_0_5dp">0.5dp</dimen>
+    <dimen name="dimes_16dp">16dp</dimen>
+    <dimen name="dimes_24dp">24dp</dimen>
+    <dimen name="dimes_18dp">18dp</dimen>
+    <dimen name="dimes_28dp">28dp</dimen>
+    <dimen name="dimes_2dp">2dp</dimen>
+    <dimen name="dimes_8dp">8dp</dimen>
+    <dimen name="dimes_4dp">4dp</dimen>
+    <dimen name="dimes_5dp">5dp</dimen>
+    <dimen name="dimes_6dp">6dp</dimen>
+    <dimen name="dimes_10dp">10dp</dimen>
+    <dimen name="dimes_12dp">12dp</dimen>
+    <dimen name="dimes_14dp">14dp</dimen>
+    <dimen name="dimes_15dp">15dp</dimen>
+    <dimen name="dimes_48dp">48dp</dimen>
+    <dimen name="dimes_1dp">1dp</dimen>
+    <dimen name="dimes_328dp">328dp</dimen>
+    <dimen name="dimes_32dp">32dp</dimen>
+    <dimen name="dimes_40dp">40dp</dimen>
+    <dimen name="dimes_45dp">45dp</dimen>
+    <dimen name="dimes_60dp">60dp</dimen>
+    <dimen name="dimes_50dp">50dp</dimen>
+    <dimen name="dimes_200dp">200dp</dimen>
+    <dimen name="dimes_150dp">150dp</dimen>
+    <dimen name="dimes_140dp">140dp</dimen>
+    <dimen name="dimes_120dp">120dp</dimen>
+    <dimen name="dimes_130dp">130dp</dimen>
+    <dimen name="dimes_180dp">180dp</dimen>
+    <dimen name="dimes_110dp">110dp</dimen>
+    <dimen name="dimes_100dp">100dp</dimen>
+    <dimen name="dimes_75dp">75dp</dimen>
+    <dimen name="dimes_80dp">80dp</dimen>
+    <dimen name="dimes_64dp">64dp</dimen>
+
+</resources>

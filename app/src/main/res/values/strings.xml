@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Wardrobe Matcher</string>
+    <string name="empty"></string>
+    <string name="match_pair">Choose Pair</string>
+    <string name="choose_method">Choose Image</string>
+    <string name="capture">Camera</string>
+    <string name="gallery">Pick from Gallery</string>
+</resources>

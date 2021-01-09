@@ -1,0 +1,124 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <!-- <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+         &lt;!&ndash; Customize your theme here. &ndash;&gt;
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+         <item name="colorAccent">@color/colorAccent</item>
+     </style>-->
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="my_dialog_theme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>                   <!--header background-->
+        <item name="android:windowBackground">@color/medium_grey</item>     <!--calendar background-->
+        <item name="colorControlActivated">@color/colorAccent</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/white</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/white</item>    <!--days of the week-->
+    </style>
+
+    <style name="Toolbar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--This line changes the color of hint text in Toolbar-->
+        <item name="android:textColorHint">@color/lightGrey</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+
+    <style name="TextStyle.ToolbarCustomTitle" parent="TextStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textColor">@color/lightBlack</item>
+    </style>
+
+    <style name="TextStyle.RegularSize" parent="TextStyle">
+        <item name="android:textColor">@color/medium_black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">@dimen/dimes_2dp</item>
+    </style>
+
+    <style name="TextStyle.MediumSize" parent="TextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">@dimen/dimes_16dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimes_16dp</item>
+    </style>
+
+
+    <style name="TextStyle.Heading" parent="TextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Theme.Tasker.Dialog" parent="@style/Theme.MaterialComponents.Light.Dialog">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textViewStyle">@style/Widget.Tasker.TextView</item>
+    </style>
+
+    <!--    parent="@android:style/Widget.Material.TextView"-->
+    <style name="Widget.Tasker.TextView" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.Tasker.Body</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:textSize">@dimen/dimes_50dp</item>
+        <item name="selectableItemBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Tasker.Body" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/lightBlack</item>
+        <item name="android:layout_height">@dimen/dimes_48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="Button.Login" parent="Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">@dimen/dimes_24dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimes_24dp</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+</resources>

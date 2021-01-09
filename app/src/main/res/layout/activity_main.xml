@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.fashion.wardrobe.util.constUtil.AppConstants"/>
+
+        <variable
+            name="viewModel"
+            type="com.fashion.wardrobe.ui.activity.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.main.MainActivity">
+
+        <include
+            android:id="@+id/included_app_bar"
+            layout="@layout/app_bar"
+            bind:viewModel = "@{ (com.fashion.wardrobe.base.BaseViewModel)viewModel }"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/top_recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimes_0dp"
+            android:layout_marginTop="@dimen/dimes_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/included_app_bar"
+            app:layout_constraintBottom_toTopOf="@id/sync_pair"
+            tools:listitem="@layout/layout_empty_lead_row"
+            tools:orientation="horizontal"
+            app:spanCount="10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:productAdapter="@{ viewModel.mTopWearList }"
+            app:productType="@{ viewModel.topWearType }"
+            app:isRandomSync="@{ viewModel.randomSync }"
+            app:viewIndex="@{ viewModel.randomTopPosition }"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bottom_recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimes_0dp"
+            android:layout_marginBottom="@dimen/dimes_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sync_pair"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/layout_empty_lead_row"
+            tools:orientation="horizontal"
+            app:spanCount="10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:productAdapter="@{ viewModel.mBottomWearList }"
+            app:productType="@{ viewModel.bottomWearType }"
+            app:isRandomSync="@{ viewModel.randomSync }"
+            app:viewIndex="@{ viewModel.randomBottomPosition }"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add_top"
+            android:layout_width="@dimen/dimes_32dp"
+            android:layout_height="@dimen/dimes_32dp"
+            android:layout_marginEnd="@dimen/dimes_16dp"
+            app:layout_constraintTop_toTopOf="@id/top_recylerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_plus"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add_bottom"
+            android:layout_width="@dimen/dimes_32dp"
+            android:layout_height="@dimen/dimes_32dp"
+            android:layout_marginEnd="@dimen/dimes_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_recylerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_plus"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/sync_pair"
+            android:layout_width="@dimen/dimes_40dp"
+            android:layout_height="@dimen/dimes_40dp"
+            android:layout_marginTop="@dimen/dimes_8dp"
+            android:layout_marginBottom="@dimen/dimes_8dp"
+            app:layout_constraintTop_toBottomOf="@id/top_recylerview"
+            app:layout_constraintBottom_toTopOf="@id/bottom_recylerview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_loading_arrows"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fav_pair"
+            android:layout_width="@dimen/dimes_40dp"
+            android:layout_height="@dimen/dimes_40dp"
+            android:layout_marginTop="@dimen/dimes_8dp"
+            android:layout_marginBottom="@dimen/dimes_8dp"
+            app:layout_constraintTop_toBottomOf="@id/top_recylerview"
+            app:layout_constraintBottom_toTopOf="@id/bottom_recylerview"
+            app:layout_constraintStart_toStartOf="@id/add_top"
+            app:layout_constraintEnd_toEndOf="@id/add_top"
+            app:srcCompat="@drawable/ic_unselected_heart"
+            android:onClick="@{ () -> viewModel.insertFavPairInStore() }"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_start_arrow"
+        android:layout_width="@dimen/dimes_32dp"
+        android:layout_height="@dimen/dimes_32dp"
+        android:layout_marginStart="@dimen/dimes_8dp"
+        app:layout_constraintTop_toTopOf="@id/top_recylerview"
+        app:layout_constraintBottom_toBottomOf="@id/top_recylerview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_left_chevron"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/top_end_arrow"
+            android:layout_width="@dimen/dimes_32dp"
+            android:layout_height="@dimen/dimes_32dp"
+            android:layout_marginEnd="@dimen/dimes_8dp"
+            app:layout_constraintTop_toTopOf="@id/top_recylerview"
+            app:layout_constraintBottom_toBottomOf="@id/top_recylerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_right_chevron"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottom_start_arrow"
+            android:layout_width="@dimen/dimes_32dp"
+            android:layout_height="@dimen/dimes_32dp"
+            android:layout_marginStart="@dimen/dimes_8dp"
+            app:layout_constraintTop_toTopOf="@id/bottom_recylerview"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_recylerview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_left_chevron"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottom_end_arrow"
+            android:layout_width="@dimen/dimes_32dp"
+            android:layout_height="@dimen/dimes_32dp"
+            android:layout_marginEnd="@dimen/dimes_8dp"
+            app:layout_constraintTop_toTopOf="@id/bottom_recylerview"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_recylerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_right_chevron"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
